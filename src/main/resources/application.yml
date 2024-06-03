@@ -1,0 +1,28 @@
+spring:
+  jpa:
+    # 전송 쿼리 확인
+    show-sql: true
+#    hibernate:
+#      ddl-auto: create-drop
+    properties:
+      hibernate:
+        # 데이터베이스에 쿼리할 실행구문 모두 보여주는 옵션
+        format_sql: true
+    # 애플리케이션 실행할때 테이블을 생성하고, data.sql 파일에 있는 쿼리를 실행하는 옵션
+    defer-datasource-initialization: true
+  datasource:
+#    url: jdbc:h2:mem:testdb
+#    username: sa
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/oauth2?serverTimezone=UTC&characterEncoding=UTF-8
+    username: root
+    password: 1234
+  h2:
+    console:
+      enabled: true
+  security:
+    oauth2:
+
+jwt:
+  issuer: joon@gmail.com
+  secret_key: oauth-example
